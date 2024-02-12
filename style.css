@@ -1,15 +1,57 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Source Code Pro", monospace;
 }
 
 button {
   width: 100px;
   height: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  background-color: #7c7a7f;
+  border-color: red;
+  border-width: 20px;
+}
+
+.calculator {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .display {
+  width: 100%;
   font-size: 50px;
+  padding: 10px;
+  background-color: #514f54;
+}
+
+.row {
+  font-size: 0;
+  display: flex;
+}
+
+#zero {
+  flex: 1;
 }

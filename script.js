@@ -64,7 +64,7 @@ allButtons.forEach(function (button) {
       }
       console.log(earlyFlag);
       if (!earlyFlag) {
-        num2 = parseInt(display.textContent);
+        num2 = parseFloat(display.textContent);
         console.log("num2 is", num2);
         if (num2 == "0" && operator == "÷") {
           display.textContent = "🙈";
@@ -72,7 +72,7 @@ allButtons.forEach(function (button) {
           display.textContent = operate(num1, num2, operator);
         }
       }
-    } else if (e.target.textContent == "Clear") {
+    } else if (e.target.textContent == "AC") {
       display.textContent = 0;
       operator = "";
       num1 = "";
@@ -83,10 +83,10 @@ allButtons.forEach(function (button) {
         operator = e.target.textContent;
       }
       if (!num1) {
-        num1 = parseInt(display.textContent);
+        num1 = parseFloat(display.textContent);
         console.log("num1 is", num1);
       } else if (!num2) {
-        num2 = parseInt(display.textContent);
+        num2 = parseFloat(display.textContent);
         console.log("num2 is", num2);
       }
       if (operator && num1 && num2) {
@@ -95,6 +95,10 @@ allButtons.forEach(function (button) {
         operator = e.target.textContent;
         num2 = "";
       }
+    } else if (e.target.textContent == "+/-") {
+      display.textContent = parseFloat(display.textContent) * -1;
+    } else if (e.target.textContent == "%") {
+      display.textContent = parseFloat(display.textContent) * 0.01;
     }
   });
 });
