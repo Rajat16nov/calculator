@@ -58,6 +58,10 @@ allButtons.forEach(function (button) {
         display.textContent += e.target.textContent;
       }
     } else if (e.target.textContent == "=") {
+      if (!num1 || !operator) {
+        console.log("not there");
+        earlyFlag = true;
+      }
       console.log(earlyFlag);
       if (!earlyFlag) {
         num2 = parseInt(display.textContent);
